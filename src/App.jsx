@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage/HomePage';
-import BolList from './pages/BOL/BolList';
-import AddBol from './pages/BOL/AddBol';
-import BolDetail from './pages/BOL/BolDetail';
-import EditBol from './pages/BOL/EditBol';
+import HomePage from './pages/HomePage/HomePage.jsx';
+import BolList from './components/BOL/BolList';
+import AddBol from './components/BOL/AddBol';
+import BolDetail from './components/BOL/BolDetail';
+import EditBol from './components/BOL/EditBol';
 
 
 export default function App() {
