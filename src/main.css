@@ -1,68 +1,66 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Global Reset Styles */
+/* Makes browsers behave consistently */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Box sizing for all elements */
+*, *::before, *::after {
+  box-sizing: border-box; /* Width includes padding/border */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Stop phones from zooming text */
+html {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
-body {
+/* Remove default margins */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
+/* Clean up lists used for nav */
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+}
+
+/* Basic page setup */
+body {
+  min-height: 100vh; /* Full screen height */
+  line-height: 1.5; /* Comfortable reading */
+}
+
+/* Tighter spacing for headings */
+h1, h2, h3, h4, button, input, label {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Prevent awkward heading breaks */
+h1, h2, h3, h4 {
+  text-wrap: balance;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Better looking links */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Responsive media */
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Consistent form elements */
+input, button, textarea, select {
+  font: inherit; /* Match page font */
+}
+
+/* Default textarea size */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Fix anchor link scrolling */
+:target {
+  scroll-margin-block: 5ex;
 }
