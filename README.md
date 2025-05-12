@@ -1,6 +1,3 @@
-frontend
-https://github.com/JoanneOs/Osman_Joanne_BOLTracker_Capstone.git
-
 BOL Tracker – Frontend Implementation
 
 I built this frontend interface for managing Bill of Lading (BOL) records using React, Vite, and React Router. It provides a complete UI for performing CRUD operations through interaction with the backend API.
@@ -89,3 +86,6 @@ Styling
 Each page and component uses dedicated CSS files to maintain separation of concerns and keep styles modular. Core layout and accessibility enhancements are handled in main.css, including a modern CSS reset.
 
 The system is fully functional, responsive, and integrates seamlessly with the backend API. It's structured for clarity, scalability, and maintainability in future development.
+
+backend github:
+https://github.com/JoanneOs/Osman_Joanne_BOLTrack_Capstone.git
