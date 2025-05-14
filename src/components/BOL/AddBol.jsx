@@ -132,8 +132,8 @@ const AddBol = () => {
                 onChange={(event) => setFieldValue('image', event.currentTarget.files[0])}
                 onBlur={handleBlur}
                 className={touched.image && errors.image ? 'error' : ''}
-                accept="image/jpeg, image/jpg, image/png"
-              />
+                accept="image/jpeg, image/jpg, image/png, application/pdf"
+                />
               <ErrorMessage name="image" component="div" className="error-message" />
             </div>
 
