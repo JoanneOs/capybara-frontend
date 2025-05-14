@@ -15,7 +15,7 @@ export const getBOLById = async (id) => {
 export const createBOL = async (bolData) => {
   const response = await axios.post(API_URL, bolData);
   return response.data;
-};
+};///
 
 export const updateBOL = async (id, bolData) => {
   const response = await axios.put(`${API_URL}/${id}`, bolData);
