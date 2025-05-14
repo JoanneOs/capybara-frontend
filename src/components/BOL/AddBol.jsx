@@ -13,12 +13,22 @@ const bolSchema = Yup.object().shape({
   rate: Yup.number().required('Rate is required').min(0, 'Rate must be positive'),
   miles: Yup.number().min(0, 'Miles must be positive'),
   status: Yup.string().oneOf(['Pending', 'Paid', 'Disputed'], 'Invalid status'),
-  image: Yup.mixed() // optional file input
-    .nullable()
-    .test('fileSize', 'File size must be less than 2MB', (value) => !value || value.size <= 2 * 1024 * 1024)
-    .test('fileType', 'Invalid file type', (value) =>
-      !value || ['image/jpeg', 'image/jpg', 'image/png'].includes(value.type)
-    ),
+  image: Yup.mixed()
+  .nullable()
+  .test(
+    'fileSize',
+    'File size must be less than 2MB',
+    (value) =>
+      !value || (value.size <= 2 * 1024 * 1024)
+  )
+  .test(
+    'fileType',
+    'Invalid file type. Allowed types are JPG, JPEG, PNG, and PDF',
+    (value) =>
+      !value ||
+      ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'].includes(value.type)
+  )
+
 });
 
 const AddBol = () => {
