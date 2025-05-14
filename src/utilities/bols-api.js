@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/api/bols';//Dev mode
-//const API_URL = 'https://osman-joanne-boltrack-capstone-backend.onrender.com';//PROD mode
+//const API_URL = 'http://localhost:3000/api/bols';//Dev mode
+const API_URL = 'https://back-end-pyu8.onrender.com';//PROD mode
 export const getAllBOLs = async () => {
   const response = await axios.get(API_URL);
   return response.data;
