@@ -1,8 +1,28 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createBOL } from '../../utilities/bols-api';
+import { Formik, Form, Field, ErrorMessage } from 'formik'; // added for form state/validation
+import * as Yup from 'yup'; // added for validation schema
+
+
 import './AddBol.css';
 
+
+// validation schema using yup
+const bolSchema = Yup.object().shape({
+  loadNumber: Yup.string().required('Load Number is required'),
+  shipper: Yup.string().required('Shipper is required'),
+  consignee: Yup.string().required('Consignee is required'),
+  rate: Yup.number().required('Rate is required').min(0, 'Rate must be positive'),
+  miles: Yup.number().min(0, 'Miles must be positive'),
+  status: Yup.string().oneOf(['Pending', 'Paid', 'Disputed'], 'Invalid status'),
+  image: Yup.mixed() // optional file input
+    .nullable()
+    .test('fileSize', 'File size must be less than 2MB', (value) => !value || value.size <= 2 * 1024 * 1024)
+    .test('fileType', 'Invalid file type', (value) =>
+      !value || ['image/jpeg', 'image/jpg', 'image/png'].includes(value.type)
+    ),
+});
 
 export default function AddBol() {
  const navigate = useNavigate();
