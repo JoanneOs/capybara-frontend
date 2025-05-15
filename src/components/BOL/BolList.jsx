@@ -1,51 +1,59 @@
+
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { getAllBOLs } from '../../utilities/bols-api';
-import './BolList.css';
+import { useParams, Link } from 'react-router-dom';
+import { getBOLById } from '../../utilities/bols-api';
+import './BolDetail.css';
 
+export default function BolDetail() {
+  const { id } = useParams();
+  const [bol, setBol] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-export default function BolList() {
- const [bols, setBols] = useState([]);
- const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    async function fetchBOL() {
+      try {
+        const data = await getBOLById(id);
+        setBol(data);
+      } catch (error) {
+        console.error('Error fetching BOL:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchBOL();
+  }, [id]);
 
+  if (loading) return <div>Loading...</div>;
+  if (!bol) return <div>BOL not found.</div>;
 
- useEffect(() => {
-   async function fetchBOLs() {
-     try {
-       const data = await getAllBOLs();
-       setBols(data);
-     } catch (error) {
-       console.error('Error fetching BOLs:', error);
-     } finally {
-       setLoading(false);
-     }
-   }
-   fetchBOLs();
- }, []);
+  return (
+    <div className="bol-detail">
+      <h1>BOL Details</h1>
+      <div className="details-container">
+        <h3>Load #: {bol.loadNumber}</h3>
+        <p>Date: {new Date(bol.date).toLocaleDateString()}</p>
+        <p>Shipper: {bol.shipper}</p>
+        <p>Consignee: {bol.consignee}</p>
+        <p>Rate: ${bol.rate}</p>
+        <p>Miles: {bol.miles}</p>
+        <p>Status: <span className={`status-${bol.status.toLowerCase()}`}>{bol.status}</span></p>
 
+        {bol.image?.url && (
+          <div className="image-section">
+            <h4>BOL Document:</h4>
+            <img 
+              src={bol.image.url} 
+              alt="BOL Proof" 
+              className="bol-image"
+            />
+          </div>
+        )}
 
- if (loading) return <div>Loading...</div>;
-
-
- return (
-   <div className="bol-list">
-     <h1>Bills of Lading</h1>
-     <Link to="/bol/add" className="btn-add">Add New BOL</Link>
-    
-     <div className="bol-grid">
-       {bols.map(bol => (
-         <div key={bol._id} className="bol-card">
-           <h3>Load #: {bol.loadNumber}</h3>
-           <p>Shipper: {bol.shipper}</p>
-           <p>Consignee: {bol.consignee}</p>
-           <p>Status: <span className={`status-${bol.status.toLowerCase()}`}>{bol.status}</span></p>
-           <div className="bol-actions">
-             <Link to={`/bol/${bol._id}`} className="btn-view">View</Link>
-             <Link to={`/bol/edit/${bol._id}`} className="btn-edit">Edit</Link>
-           </div>
-         </div>
-       ))}
-     </div>
-   </div>
- );
+        <div className="action-buttons">
+          <Link to={`/bol/edit/${bol._id}`} className="btn edit-btn">Edit</Link>
+          <Link to="/bol" className="btn back-btn">Back to List</Link>
+        </div>
+      </div>
+    </div>
+  );
 }

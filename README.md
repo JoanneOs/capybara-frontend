@@ -97,4 +97,4 @@ https://front-end-id6w.onrender.com// new
 https://osman-joanne-boltracker-capstone-frontend.onrender.com# frontendrendertest
 
 /////////////////////was test//////
-Frontend (https://frontendrendertest.onrender.com) loads data from https://back-end-pyu8.onrender.com/api/bols.
+Frontend (https://frontendrendertest.onrender.com) loads data from https://back-end-pyu8.onrender.com/api/bols
