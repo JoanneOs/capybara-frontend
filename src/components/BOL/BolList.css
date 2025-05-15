@@ -107,3 +107,17 @@
 .btn-edit:hover {
   background-color: #23272b;
 }
+.btn-edit {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #343a40;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.btn-edit:hover {
+  background-color: #23272b;
+}
