@@ -1,109 +1,49 @@
+/* BolList.css */
 .bol-list {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-  }
-  
-  .bol-list h1 {
-    color: #343a40;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-  }
-  
-  .btn-add {
-    display: block;
-    width: 200px;
-    margin: 0 auto 2rem;
-    padding: 0.75rem;
-    background-color: #28a745;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-add:hover {
-    background-color: #218838;
-  }
-  
-  .bol-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .bol-card {
-    background: white;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    padding: 1.5rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .bol-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  }
-  
-  .bol-card h3 {
-    color: #343a40;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #dee2e6;
-    padding-bottom: 0.5rem;
-  }
-  
-  .bol-card p {
-    margin-bottom: 0.75rem;
-    color: #495057;
-  }
-  
-  .status-pending {
-    color: #ffc107;
-    font-weight: bold;
-  }
-  
-  .status-paid {
-    color: #28a745;
-    font-weight: bold;
-  }
-  
-  .status-disputed {
-    color: #dc3545;
-    font-weight: bold;
-  }
-  
-  .bol-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-  }
-  
-  .btn-view,
-  .btn-edit {
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-  }
-  
-  .btn-view {
-    background-color: #17a2b8;
-    color: white;
-  }
-  
-  .btn-view:hover {
-    background-color: #138496;
-  }
-  
-  .btn-edit {
-    background-color: #343a40;
-    color: white;
-  }
-  
-  .btn-edit:hover {
-    background-color: #23272b;
-  }
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-add {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.bol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.bol-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-pending { color: #FFC107; }
+.status-paid { color: #4CAF50; }
+.status-disputed { color: #F44336; }
+
+.bol-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-view, .btn-edit {
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-view { background: #2196F3; color: white; }
+.btn-edit { background: #FFC107; color: black; }
