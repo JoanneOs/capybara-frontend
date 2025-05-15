@@ -1,64 +1,85 @@
 .edit-bol {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  }
-  
-  .edit-bol h1 {
-    color: #343a40;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-    border-bottom: 1px solid #dee2e6;
-    padding-bottom: 1rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #495057;
-    font-weight: bold;
-  }
-  
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    background-color: #f8f9fa;
-  }
-  
-  .form-group input:focus,
-  .form-group select:focus {
-    outline: none;
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    background-color: white;
-  }
-  
-  .btn-submit {
-    width: 100%;
-    padding: 1rem;
-    background-color: #17a2b8;
-    color: white;
-    border: none;
-    border-radius: 0.25rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 1rem;
-  }
-  
-  .btn-submit:hover {
-    background-color: #138496;
-  }
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.edit-bol h1 {
+  color: #343a40;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #495057;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  background-color: #f8f9fa;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  background-color: white;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: #138496;
+}
+
+.button-group {
+  margin-top: 20px;
+}
+
+.btn-submit {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
