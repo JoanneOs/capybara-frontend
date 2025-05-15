@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 //const API_URL = 'http://localhost:3000/api/bols';//Dev mode
-const API_URL = 'https://back-end-pyu8.onrender.com/api/bols';//PROD mode
+//const API_URL = 'https://back-end-pyu8.onrender.com';//PROD mode
+const API_URL = 'https://back-end-pyu8.onrender.com/api/bols'; // Prod
+
 
 export const getAllBOLs = async () => {
   const response = await axios.get(API_URL);
