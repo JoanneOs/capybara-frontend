@@ -35,11 +35,11 @@ A React frontend for managing Bill of Lading (BOL) records with full CRUD functi
 
 
 src/
-├── components/BOL/      # All BOL components
-├── pages/               # Route-level components
-├── utilities/           # API functions
-├── App.jsx              # Main app router
-└── main.jsx             # App entry point
+components/BOL/      # All BOL components
+pages/               # Route-level components
+utilities/           # API functions
+App.jsx              # Main app router
+main.jsx             # App entry point
 
 
 ## Setup
@@ -84,15 +84,3 @@ The frontend uses these endpoints:
 - `GET /api/bols/:id` - Get single BOL
 - `PUT /api/bols/:id` - Update BOL
 - `DELETE /api/bols/:id` - Delete BOL
-```
-
-This version:
-1. Keeps all critical information
-2. Uses clear section headers
-3. Includes badge icons for key technologies
-4. Maintains links to live demos and backend
-5. Uses tables for structured data
-6. Removes redundant explanations
-7. Keeps the setup instructions minimal but complete
-
-Would you like me to adjust any section further or emphasize any particular aspect?
