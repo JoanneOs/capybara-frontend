@@ -31,16 +31,6 @@ A React frontend for managing Bill of Lading (BOL) records with full CRUD functi
 - Axios for API calls
 - Formik & Yup for forms
 
-## Project Structure
-
-
-src/
-components/BOL/      # All BOL components
-pages/               # Route-level components
-utilities/           # API functions
-App.jsx              # Main app router
-main.jsx             # App entry point
-
 
 ## Setup
 
@@ -84,3 +74,7 @@ The frontend uses these endpoints:
 - `GET /api/bols/:id` - Get single BOL
 - `PUT /api/bols/:id` - Update BOL
 - `DELETE /api/bols/:id` - Delete BOL
+
+## Resources & References
+Yup Validation https://www.npmjs.com/package/yup
+React Router v6 Docs https://reactrouter.com/6.28.0/start/overview
