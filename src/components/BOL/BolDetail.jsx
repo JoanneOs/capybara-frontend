@@ -1,7 +1,9 @@
-
-
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
 import { getBOLById } from '../../utilities/bols-api';
 import './BolDetail.css';
 
@@ -27,6 +29,11 @@ export default function BolDetail() {
   if (loading) return <div>Loading...</div>;
   if (!bol) return <div>BOL not found.</div>;
 
+  // Determine file type (if any)
+  const fileUrl = bol?.document?.url || bol?.image?.url || '';
+  const isPDF = fileUrl.toLowerCase().endsWith('.pdf');
+  const isImage = /\.(jpg|jpeg|png|gif)$/i.test(fileUrl);
+
   return (
     <div className="bol-detail">
       <h1>BOL Details</h1>
@@ -39,14 +46,29 @@ export default function BolDetail() {
         <p>Miles: {bol.miles}</p>
         <p>Status: <span className={`status-${bol.status.toLowerCase()}`}>{bol.status}</span></p>
 
-        {bol.image?.url && (
-          <div className="image-section">
+        {fileUrl && (
+          <div className="document-section">
             <h4>BOL Document:</h4>
-            <img 
-              src={bol.image.url} 
-              alt="BOL Proof" 
-              className="bol-image"
-            />
+
+            {isPDF && (
+              <div style={{ height: '750px', border: '1px solid #ccc' }}>
+                <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+                  <Viewer fileUrl={fileUrl} />
+                </Worker>
+              </div>
+            )}
+
+            {isImage && (
+              <img
+                src={fileUrl}
+                alt="BOL Proof"
+                className="bol-image"
+              />
+            )}
+
+            {!isPDF && !isImage && (
+              <p>Unsupported file format.</p>
+            )}
           </div>
         )}
 
