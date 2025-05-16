@@ -71,7 +71,7 @@ export default function EditBol() {
         <p><strong>Consignee:</strong> {formData.consignee}</p>
         <p><strong>Status:</strong> {formData.status}</p>
         <button onClick={handleBackToList} className="btn-ok">
-          OK -Back to List
+          OK Back to List
         </button>
       </div>
     );

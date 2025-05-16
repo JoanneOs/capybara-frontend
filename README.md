@@ -76,5 +76,5 @@ The frontend uses these endpoints:
 - `DELETE /api/bols/:id` - Delete BOL
 
 ## Resources & References
-Yup Validation https://www.npmjs.com/package/yup
-React Router v6 Docs https://reactrouter.com/6.28.0/start/overview
+-Yup Validation https://www.npmjs.com/package/yup
+-React Router v6 Docs https://reactrouter.com/6.28.0/start/overview
